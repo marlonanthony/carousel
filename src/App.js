@@ -30,18 +30,9 @@ const imgUrls = [
 ];
 
 class App extends Component {
-	constructor (props) {
-		super(props);
-		
-		this.state = {
-			currentImageIndex: 0
-		};
-		
-		this.nextSlide = this.nextSlide.bind(this);
-		this.previousSlide = this.previousSlide.bind(this);
-	}
+  state = {	currentImageIndex: 0 }
 	
-	previousSlide () {
+	previousSlide = () => {
 		const lastIndex = imgUrls.length - 1;
 		const { currentImageIndex } = this.state;
 		const shouldResetIndex = currentImageIndex === 0;
@@ -52,7 +43,7 @@ class App extends Component {
 		});
 	}
 	
-	nextSlide () {
+	nextSlide = () => {
 		const lastIndex = imgUrls.length - 1;
 		const { currentImageIndex } = this.state;
 		const shouldResetIndex = currentImageIndex === lastIndex;
